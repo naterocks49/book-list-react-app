@@ -6,12 +6,10 @@ import BookList from './components/BookList';
 function App() {
     const [books, setBooks] = useState([]);
 
-    const createBook = (title) => {
-        const updatedBooks = [
-            ...books,
-            { id: Math.round(Math.random() * 9999), title }
-        ];
-        setBooks(updatedBooks);
+    const createBook = async (title) => {
+        await axios.post('http://localhost:3001/books', {
+            title
+        });
     };
 
     const deleteBookById = (id) => {
