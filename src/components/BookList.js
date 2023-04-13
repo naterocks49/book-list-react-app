@@ -9,7 +9,10 @@ function BookList({ books, onDelete, onEdit }) {
         return <BookShow key={book.id} book={book} onDelete={onDelete} onEdit={onEdit} />;
     });
 
-    return <div className="book-list">{renderedBooks}</div>;
+    return <div className="book-list">
+        {value}
+        {renderedBooks}
+    </div>;
 }
 
 export default BookList;
